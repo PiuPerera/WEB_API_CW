@@ -50,9 +50,35 @@ router.put("/:id", async (req,res) =>{
 
  
 router.post("/",async (req,res) =>{
+    //400 - bad request
     if(!req.body.name){
-        return res.status(404).send("Why you are no send the name in the request?")
-    } 
+        return res.status(404).send("Cat's name can not be empty.")
+    }
+    //411 - length required
+    else if(req.body.name.length<3 || req.body.name.length>20){
+        return res.status(411).send("Cat's name can not be less than 3 letters or greater than 20 letters.");
+    }
+    else if (!req.body.age){
+        return res.status(404).send("Cat's age can not be empty.")
+    }
+    else if(!req.body.gender){
+        return res.status(400).send("Cat's gender can not be empty.");
+    }
+    else if(!req.body.description){
+        return res.status(400).send("Cat's description can not be empty.");
+    }
+    else if(req.body.description.length < 10){
+        return res.status(400).send("Cat's description can not less than 10 letters.");
+    }
+    else if(!req.body.proPic){
+        return res.status(400).send("Cat's profile picture can not be empty.");
+    }
+    else if(!req.body.contactNo){
+        return res.status(400).send("Location can not be empty.");
+    }
+    else if(!req.body.location){
+        return res.status(400).send("Location can not be empty.");
+    }
     let newcattylove = new CattyLove({
         name : ucf.upperCaseFirst(req.body.name),
         age :  req.body.age,
