@@ -32,21 +32,33 @@ router.get("/:id", async (req,res) =>{
 
 router.put("/:id", async (req,res) =>{
     let requsetedID = req.params.id;
-    try{
-        let cattylove = await CattyLove.findById(requsetedID);
-        if(!cattylove){
+    let cattylove = await CattyLove.findById(requsetedID);
+
+    if(!cattylove){
             return res.
             status(404).
             send("Cat you are looking for does not excist")
         }
-        cattylove.set({ likeCount: req.body.likeCount});
-        cattylove = await cattylove.save();
+        cattylove.set({
+            name : ucf.upperCaseFirst(req.body.name),
+            age :  req.body.age,
+            gender : req.body.gender,
+            description: req.body.description,
+            likeCount: req.body.likeCount,
+            proPic: req.body.proPic,
+            features: req.body.features,
+            contactNo: req.body.contactNo,
+            imageUrl: req.body.imageUrl,
+            location: req.body.location
+        });
+    try{
+        cattylove = await cattylove.save()
         return res.send(cattylove);
     }
     catch(ex){
         return res.status(500).send("Error",ex.message)
     }
-})
+});
 
  
 router.post("/",async (req,res) =>{
