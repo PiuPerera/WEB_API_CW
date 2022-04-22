@@ -11,6 +11,10 @@ class Cat extends Component {
         likeCount: 60
     };
 
+    likeCat = () => {
+        this.setState({likeCount: this.state.likeCount+1});
+    }
+
     render() {
         return (
             <React.Fragment>
@@ -24,7 +28,11 @@ class Cat extends Component {
                             <li>Colour : {this.state.catColor}</li>
                         </ul>
                         <p className="card-text text-muted">{this.state.catDescription}</p>
-                        <a href="#" className="btn btn-outline-primary">View More</a>
+                        <a href="#" className="btn btn-primary">View More</a>
+                        <button type="button" className="btn btn-outline-primary" style={{marginLeft: "50px"}} onClick={this.likeCat}>
+                            <img src="https://cdn4.iconfinder.com/data/icons/facebook-ui-twotone/48/Paul-32-512.png" height ="25" width="25"></img>
+                            <span className="badge bg-light" style={{color: "black"}}>{this.state.likeCount}</span>
+                        </button>
                     </div>
                 </div>
             </React.Fragment>
