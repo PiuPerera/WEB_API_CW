@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
-import Cat from "./components/cat"
+import Cat from "./Components/catCard"
 
-ReactDOM.createRoot(<Cat/>, document.getElementById("root"));
+ReactDOM.render(<Cat/>, document.getElementById("root"));
