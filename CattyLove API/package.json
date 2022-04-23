@@ -14,6 +14,7 @@
   "author": "W.A.U.S.Wijesuriya M.S.A.M.Fernando G.S.P.Perera M.T.K.C.Abeysinghe",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.3",
     "mongoose": "^6.3.0",
     "upper-case-first": "^2.0.2"
