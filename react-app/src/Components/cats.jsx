@@ -1,59 +1,10 @@
 import React, { Component } from "react";
+import axios from "axios";
 import Cat from "./CatCard";
 
 class Cats extends Component{
     state = {
-        allCats : [
-            {
-                id: 1,
-                name: "Robert",
-                age: 1.5,
-                color: "Brown",
-                likeCount: 30
-            },
-            {
-                id: 2,
-                name: "Maggy",
-                age: 0.7,
-                color: "Black & White",
-                likeCount: 45
-            },
-            {
-                id: 3,
-                name: "Henry",
-                age: 1.5,
-                color: "Brown",
-                likeCount: 25
-            },
-            {
-                id: 4,
-                name: "Barry",
-                age: 1.5,
-                color: "Brown",
-                likeCount: 25
-            },
-            {
-                id: 5,
-                name: "Kate",
-                age: 1.5,
-                color: "Brown",
-                likeCount: 25
-            },
-            {
-                id: 6,
-                name: "Kitty",
-                age: 1.5,
-                color: "Brown",
-                likeCount: 25
-            },
-            {
-                id: 7,
-                name: "Henry",
-                age: 1.5,
-                color: "Brown",
-                likeCount: 25
-            },
-        ]
+        allCats : []
     };
 
     render() {
@@ -62,12 +13,29 @@ class Cats extends Component{
                 <div className="row">
                     {this.state.allCats.map(cat => (
                         <div className="col" key={cat.id}>
-                        <Cat key={cat.id} />
+                        <Cat key={cat.id} cat={cat} />
                         </div>
                     ))}
                 </div>
             </div>
         );
+    }
+
+    async componentDidMount() {
+        const {data} = await axios.get("http://localhost:4000/api/cats");
+        let cats = data.map((cat)=> {
+            return {
+                id : cat._id,
+                name : cat.name,
+                age : cat.age,
+                gender : cat.gender,
+                color : cat.color,
+                description : cat.description,
+                image : cat.imageUrl,
+                likeCount : cat.likeCount
+            };
+        });
+        this.setState({allCats : cats});
     }
 }
 
