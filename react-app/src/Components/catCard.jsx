@@ -17,7 +17,7 @@ class Cat extends Component {
                         </ul>
                         <p className="card-text text-muted">{this.props.cat.description}</p>
                         <a href="#" className="btn btn-primary">View More</a>
-                        <button type="button" className="btn btn-outline-primary" style={{marginLeft: "50px"}} onClick={this.likeCat}>
+                        <button type="button" className="btn btn-outline-primary" style={{marginLeft: "50px"}} onClick={this.props.onLike}>
                             <img src="https://cdn4.iconfinder.com/data/icons/facebook-ui-twotone/48/Paul-32-512.png" height ="25" width="25"></img>
                             <span className="badge bg-light" style={{color: "black"}}>{this.props.cat.likeCount}</span>
                         </button>
