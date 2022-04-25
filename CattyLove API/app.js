@@ -5,6 +5,8 @@ const cors = require("cors");
 const home = require("./routes/home");
 const cats = require("./routes/cats");
 const CattyLove = require("./routes/adminCattyLove");
+const auth = require("./routes/auth");
+const users = require("./routes/users");
 
 mongoose.connect("mongodb://localhost/cattylovedb")
 .then(() => console.log("Connected to db Successfully..."))
@@ -17,7 +19,8 @@ app.use(express.json());
 app.use('/', home);
 app.use('/api/cats', cats);
 app.use("/api/cattylove",CattyLove);
-
+app.use("/api/auth", auth);
+app.use("/api/users", users);
 
 app.listen(Port, () => {
     console.log("Started Listning on Port :" + Port);

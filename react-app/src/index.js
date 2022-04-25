@@ -1,7 +1,7 @@
 import React from "react";
 //import ReactDOM from "react-dom";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
-import Cat from "./Components/catCard"
+//import Cat from "./Components/catCard"
 import AdminCat from './Components/admin/cats'
 import { render } from "@testing-library/react";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
@@ -16,7 +16,7 @@ render(
     <BrowserRouter>
         <NavBar/>
         <Routes>
-            <Route exact path = "/admin" element={<AdminCat/>}/>
+            <Route exact path = "/" element={<AdminCat/>}/>
             <Route exact path = "/signin" element={<SignIn/>}/>
             <Route exact path = "/signup" element={<SignUp/>}/>
             <Route exact path = "/about" element={<About/>}/>
