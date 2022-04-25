@@ -103,7 +103,12 @@ class NavBar extends Component{
                                     <Link to="/" className="nav-link">
                                         Home
                                     </Link>
-                                </li> 
+                                </li>
+                                <li className="nav-item">
+                                    <Link to="/cats" className="nav-link">
+                                        Cats
+                                    </Link>
+                                </li>
                                 <li className="nav-item">
                                     <Link to="/about" className="nav-link">
                                         About

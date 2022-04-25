@@ -9,6 +9,7 @@ import NavBar from "./Components/navBar"
 import SignIn from  "./Components/signin"
 import SignUp from  "./Components/signup"
 import About from "./Components/about"
+import Cats from "./Components/cats";
 
 //ReactDOM.render(<Cat/>, document.getElementById("root"));
 
@@ -20,6 +21,7 @@ render(
             <Route exact path = "/signin" element={<SignIn/>}/>
             <Route exact path = "/signup" element={<SignUp/>}/>
             <Route exact path = "/about" element={<About/>}/>
+            <Route exact path = "/cats" element={<Cats />}/>
         </Routes>
     </BrowserRouter>
     , document.getElementById("root")

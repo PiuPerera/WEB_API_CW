@@ -16,11 +16,15 @@ class Cat extends Component {
                             <li>Colour : {this.props.cat.color}</li>
                         </ul>
                         <p className="card-text text-muted">{this.props.cat.description}</p>
-                        <button className="btn btn-primary">View More</button>
-                        <button type="button" className="btn btn-outline-primary" style={{marginLeft: "50px"}} onClick={this.props.onLike}>
+                        <a href="#" className="btn btn-primary">View More</a>
+                        {/* <button type="button" className="btn btn-outline-primary" style={{marginLeft: "50px"}} onClick={this.props.onLike}>
                             <img src="https://cdn4.iconfinder.com/data/icons/facebook-ui-twotone/48/Paul-32-512.png" height ="25" width="25"></img>
                             <span className="badge bg-light" style={{color: "black"}}>{this.props.cat.likeCount}</span>
-                        </button>
+                        </button> */}
+                        <img src="./images/thumb_up_FILL0_wght400_GRAD0_opsz48.png" width="20px" height="20px" onClick={this.props.onLike} style={{marginLeft: "30px"}}></img>
+                        <span className="badge bg-light" style={{color: "black"}}>{this.props.cat.likeCount}</span>
+                        <img src="./images/thumb_down_FILL0_wght400_GRAD0_opsz48.png" width="20px" height="20px" onClick={this.props.onLike} style={{marginLeft: "10px"}}></img>
+                        <span className="badge bg-light" style={{color: "black"}}>{this.props.cat.likeCount}</span>
                     </div>
                 </div>
             </React.Fragment>
