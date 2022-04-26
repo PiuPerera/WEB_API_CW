@@ -7,9 +7,9 @@ class Admincat extends Component {
         return (
             <React.Fragment>
                 <div className="card" style={{width: "20rem"}}>
-                    <img className="card-img-top"  style = {{height: "300px"}} 
-                    src={this.props.adminCat.proPic} 
-                    alt="..."/>
+                    <img className="card-img-top" 
+                    src={this.props.adminCat.imageUrl} 
+                    alt="..." height="300px" />
                     <div className="card-body">
                         <h5 className="card-title">{this.props.adminCat.name}</h5>
                         <ul>

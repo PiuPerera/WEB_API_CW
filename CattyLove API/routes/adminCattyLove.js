@@ -69,8 +69,8 @@ router.post("/",async (req,res) =>{
     else if(req.body.description.length < 10){
         return res.status(400).send("Cat's description can not less than 10 letters.");
     }
-    else if(!req.body.proPic){
-        return res.status(400).send("Cat's profile picture can not be empty.");
+    else if(!req.body.imageUrl){
+        return res.status(400).send("Cat's Image can not be empty.");
     }
     else if(!req.body.contactNo){
         return res.status(400).send("Location can not be empty.");

@@ -27,5 +27,6 @@ router.post("/", async (req, res) => {
   return res
     .status(200)
     .send({ token: token, isAdmin: user.isAdmin, id: user._id });
+    
 });
 module.exports = router;

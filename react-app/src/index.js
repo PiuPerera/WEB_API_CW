@@ -10,6 +10,7 @@ import SignIn from  "./Components/signin"
 import SignUp from  "./Components/signup"
 import About from "./Components/about"
 import Cats from "./Components/cats";
+import CatView from "./Components/CatView";
 
 //ReactDOM.render(<Cat/>, document.getElementById("root"));
 
@@ -17,12 +18,13 @@ render(
     <BrowserRouter>
         <NavBar/>
         <Routes>
-            <Route exact path = "/" element={<AdminCat/>}/>
+            <Route exact path = "/" element={<Cats/>}/>
             <Route exact path = "/signin" element={<SignIn/>}/>
             <Route exact path = "/signup" element={<SignUp/>}/>
             <Route exact path = "/about" element={<About/>}/>
-            <Route exact path = "/cats" element={<Cats />}/>
-        </Routes>
+            <Route exact path = "/admin" element={<AdminCat />}/>
+            <Route exact path = "/view" element={<CatView />}/>
+        </Routes> 
     </BrowserRouter>
     , document.getElementById("root")
 )

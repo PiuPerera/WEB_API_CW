@@ -81,7 +81,7 @@ class SignUp extends Component {
     async handleSubmit(event) {
       event.preventDefault();
       try {
-        const { data } = await axios.post(`api/users`, {
+          await axios.post(`http://localhost:4000/api/users`, {
           username: this.state.username,
           email: this.state.email,
           password: this.state.password,

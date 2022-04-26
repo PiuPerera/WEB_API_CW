@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import Cat from "./CatCard";
+import Cat from "./catCard";
 
 class Cats extends Component{
     state = {
@@ -60,22 +60,6 @@ class Cats extends Component{
         let index = updatedCats.indexOf(cat);
         updatedCats[index] = {...cat};
         updatedCats[index].likeCount ++;
-        this.setState({allCats : updatedCats})
-    }
-
-    async unlikeCat(cat) {
-        try{
-            await axios.put(`http://localhost:4000/api/cats/${cat.id}`, {
-                unlikeCount : cat.unlikeCount + 1
-            });
-        }
-        catch(err){
-            return ("Error :", err.message);
-        }
-        let updatedCats = [...this.state.allCats];
-        let index = updatedCats.indexOf(cat);
-        updatedCats[index] = {...cat};
-        updatedCats[index].unlikeCount ++;
         this.setState({allCats : updatedCats})
     }
 }

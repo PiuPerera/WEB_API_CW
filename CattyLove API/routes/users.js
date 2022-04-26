@@ -22,7 +22,7 @@ router.post("/", async (req, res) => {
                 } else {
                     if (user) {
                         let token = jwt.sign(
-                            { id: user._id, email: user.email, isAdmin: user.isAdmin },
+                            {email: user.email, isAdmin: user.isAdmin },
                             SECRET_KEY
                         );
                         return res
@@ -39,7 +39,7 @@ router.post("/", async (req, res) => {
                         });
                         user = await user.save();
                         let token = jwt.sign(
-                            { id: user._id, email: user.email, isAdmin: user.isAdmin },
+                            { email: user.email, isAdmin: user.isAdmin },
                             SECRET_KEY
                         );
                         req.session._id = user._id;
